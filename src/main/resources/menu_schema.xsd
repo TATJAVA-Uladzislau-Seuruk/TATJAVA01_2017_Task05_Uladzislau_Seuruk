@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.tat.epam.com/menu"
+  xmlns:tns="http://www.tat.epam.com/menu"
+  elementFormDefault="qualified">
+
+  <element name="menu">
+    <complexType>
+      <all>
+        <element name="coldAppetizers" type="tns:Section" minOccurs="0"/>
+        <element name="hotAppetizers" type="tns:Section" minOccurs="0"/>
+        <element name="breakfasts" type="tns:Section" minOccurs="0"/>
+        <element name="salads" type="tns:Section" minOccurs="0"/>
+        <element name="soups" type="tns:Section" minOccurs="0"/>
+        <element name="fishDishes" type="tns:Section" minOccurs="0"/>
+        <element name="meatDishes" type="tns:Section" minOccurs="0"/>
+        <element name="sideDishes" type="tns:Section" minOccurs="0"/>
+        <element name="grillDishes" type="tns:Section" minOccurs="0"/>
+        <element name="chefSpecial" type="tns:Section" minOccurs="0"/>
+        <element name="annex" type="tns:Section" minOccurs="0"/>
+        <element name="desserts" type="tns:Section" minOccurs="0"/>
+      </all>
+    </complexType>
+  </element>
+
+  <complexType name="Section">
+    <sequence>
+      <element name="item" type="tns:Item" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="Item">
+    <sequence>
+      <element name="photoUri" type="anyURI" minOccurs="0"/>
+      <element name="name" type="string"/>
+      <element name="description" type="string" minOccurs="0"/>
+      <element name="portion" type="string"/>
+      <element name="price" type="string" minOccurs="0"/>
+    </sequence>
+    <attribute name="id" type="ID" use="required"/>
+  </complexType>
+
+</schema>
